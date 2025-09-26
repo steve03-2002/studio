@@ -26,12 +26,14 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
 
-export { auth, db, onAuthStateChanged };
+export { auth, db };
 export type { User };
 
 // Authentication functions
 export const signInWithGoogle = () => signInWithPopup(auth, googleProvider);
 export const signOutUser = () => signOut(auth);
+export const onAuthChange = (callback: (user: User | null) => void) => onAuthStateChanged(auth, callback);
+
 
 // Firestore functions
 const CALCULATIONS_COLLECTION = 'calculations';

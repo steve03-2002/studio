@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import type { User } from 'firebase/auth';
-import { onAuthStateChanged, signInWithGoogle, signOutUser } from '@/lib/firebase';
+import { onAuthChange, signInWithGoogle, signOutUser } from '@/lib/firebase';
 import { useToast } from '@/hooks/use-toast';
 import type { Calculation } from '@/types';
 import { getHistoryAction } from '@/app/actions';
@@ -34,7 +34,7 @@ export default function GSTCalculatorPage() {
   }, [toast]);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged((user) => {
+    const unsubscribe = onAuthChange((user) => {
       setUser(user);
       if (user) {
         fetchHistory(user.uid);
