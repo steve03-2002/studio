@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import type { User } from 'firebase/auth';
-import { onAuthStateChanged, signInWithGoogle, signOut } from '@/lib/firebase';
+import { onAuthStateChanged, signInWithGoogle, signOutUser } from '@/lib/firebase';
 import { useToast } from '@/hooks/use-toast';
 import type { Calculation } from '@/types';
 import { getHistoryAction } from '@/app/actions';
@@ -65,7 +65,7 @@ export default function GSTCalculatorPage() {
 
   const handleSignOut = async () => {
     try {
-      await signOut();
+      await signOutUser();
       toast({
         title: 'Signed Out',
         description: 'You have been signed out.',

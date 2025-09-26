@@ -30,7 +30,7 @@ export type { User };
 
 // Authentication functions
 export const signInWithGoogle = () => signInWithPopup(auth, googleProvider);
-export const-signOut = () => signOut(auth);
+export const signOutUser = () => signOut(auth);
 
 // Firestore functions
 const CALCULATIONS_COLLECTION = 'calculations';
