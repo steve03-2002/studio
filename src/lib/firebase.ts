@@ -9,8 +9,9 @@ const firebaseConfig = {
   "appId": "1:525995542255:web:da83178b99ab81ca8afd1a",
   "apiKey": "AIzaSyBmy0iPgZsuwpGST8FeaGDLDvjUoE1-HMw",
   "authDomain": "studio-7820799130-4a199.firebaseapp.com",
-  "measurementId": "",
-  "messagingSenderId": "525995542255"
+  "measurementId": "G-9X53T3G3G2",
+  "messagingSenderId": "525995542255",
+  "storageBucket": "studio-7820799130-4a199.appspot.com"
 };
 
 // Initialize Firebase
